@@ -18,9 +18,10 @@ body {
 #user {
     color: rgb(87, 218, 87);
     display: inline-block;
+    padding-top: 0.25rem;
 }
 
-.cursor {
+.white {
     color: white;
     font-weight: bolder;
 }
