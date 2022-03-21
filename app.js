@@ -17,17 +17,13 @@ async function loadingAnimation()  {
     }
 
     // typewriter effect
-    var string = "start website";
+    var string = "npm install fabio-maffucci.ch";
 
     // for each character in string
     for(var i = 0; i<string.length; i++) {
         if(i<string.length) {
             loading.innerHTML += string.charAt(i);
-            if(string.charAt(i) === " ") {
-                await sleep(500);
-            } else {
-                await sleep(Math.random() * 290);
-            }
+            await sleep(100);
         }
     }
 
