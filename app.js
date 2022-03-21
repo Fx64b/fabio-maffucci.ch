@@ -6,7 +6,7 @@ async function loadingAnimation()  {
     var loading = document.getElementById("loading");
     var user = document.getElementById("user");
     // wait for a short time
-    await sleep(1000);
+    await sleep(500);
 
     // blinking effect
     for(var i = 0; i<3; i++) {
@@ -18,13 +18,18 @@ async function loadingAnimation()  {
 
     // typewriter effect
     var string = "start website";
- 
-for(var i = 0; i<string.length; i++) {
-    if(i<string.length) {
-        loading.innerHTML += string.charAt(i);
-        await sleep(Math.random() * 320);
+
+    // for each character in string
+    for(var i = 0; i<string.length; i++) {
+        if(i<string.length) {
+            loading.innerHTML += string.charAt(i);
+            if(string.charAt(i) === " ") {
+                await sleep(500);
+            } else {
+                await sleep(Math.random() * 300);
+            }
+        }
     }
-}
 
 }
 
