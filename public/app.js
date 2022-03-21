@@ -17,7 +17,7 @@ async function loadingAnimation()  {
     }
 
     // typewriter effect
-    var string = "npm install fabio-maffucci.ch";
+    var string = "npm install";
 
     // for each character in string
     for(var i = 0; i<string.length; i++) {
