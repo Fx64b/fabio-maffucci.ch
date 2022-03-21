@@ -27,6 +27,6 @@ async function loadingAnimation()  {
         }
     }
 
-} 
+}
 
 loadingAnimation();
