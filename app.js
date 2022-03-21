@@ -26,7 +26,7 @@ async function loadingAnimation()  {
             if(string.charAt(i) === " ") {
                 await sleep(500);
             } else {
-                await sleep(Math.random() * 300);
+                await sleep(Math.random() * 290);
             }
         }
     }
