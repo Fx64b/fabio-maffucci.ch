@@ -10,9 +10,9 @@ async function loadingAnimation()  {
 
     // blinking effect
     for(var i = 0; i<3; i++) {
-        user.innerHTML = '[fabio@maffucci ~]$ <span class="cursor">_</span>';
+        user.innerHTML = '[fabio@maffucci <span class="white">~</span>]$ <span class="white">_</span>';
         await sleep(600);
-        user.innerHTML = "[fabio@maffucci ~]$ ";
+        user.innerHTML = '[fabio@maffucci <span class="white">~</span>]$ ';
         await sleep(600);
     }
 
@@ -26,6 +26,10 @@ async function loadingAnimation()  {
             await sleep(100);
         }
     }
+
+    await sleep(1000);
+
+    loading.innerHTML += '<br><div id="user">[fabio@maffucci <span class="white">fabio-maffucci</span>]$</div>';
 
 }
 
