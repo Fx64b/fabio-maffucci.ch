@@ -42,4 +42,9 @@
         text-white
         font-bold;
     }
+
+    .yellow {
+        @apply
+        text-yellow-300;
+    }
 }
