@@ -29,7 +29,20 @@ async function loadingAnimation()  {
 
     await sleep(800);
 
-    loading.innerHTML += '<br><div id="user">[fabio@maffucci <span class="white">fabio-maffucci</span>]$</div>';
+    loading.innerHTML += '<br><div id="folder">[fabio@maffucci <span class="white">fabio-maffucci</span>]$</div>';
+
+    var folder = document.getElementById("folder");
+
+    // blinking effect
+    for(var i = 0; i<2; i++) {
+        folder.innerHTML = '[fabio@maffucci <span class="white">fabio-maffucci</span>]$ <span class="white">_</span>';
+        await sleep(600);
+        folder.innerHTML = '[fabio@maffucci <span class="white">fabio-maffucci</span>]$ ';
+        await sleep(600);
+    }
+
+    // typewrite
+    
 
 }
 
