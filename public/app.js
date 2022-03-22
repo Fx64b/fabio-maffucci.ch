@@ -41,8 +41,20 @@ async function loadingAnimation()  {
         await sleep(600);
     }
 
-    // typewrite
-    
+
+    // typewriter effect
+    var string = " git pull";
+
+    // for each character in string
+    for(var i = 0; i<string.length; i++) {
+        if(i<string.length) {
+            loading.innerHTML += string.charAt(i);
+            await sleep(100);
+        }
+    }
+
+    await sleep(800);
+
 
 }
 
