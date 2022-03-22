@@ -30,6 +30,13 @@
         pt-1;
     }
 
+    #folder {
+        @apply
+        text-[#57DA57]
+        inline-block
+        pt-1;
+    }
+
     .white {
         @apply
         text-white
