@@ -27,7 +27,7 @@ async function loadingAnimation()  {
         }
     }
 
-    await sleep(1000);
+    await sleep(800);
 
     loading.innerHTML += '<br><div id="user">[fabio@maffucci <span class="white">fabio-maffucci</span>]$</div>';
 
