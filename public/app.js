@@ -67,21 +67,25 @@ async function loadingAnimation()  {
     // set objects to random amount
     do {
         var objects = Math.ceil(Math.random() * 100);
-    } while (objects < 3 || objects > 90);
+    } while (objects < 9 || objects > 90);
     
     await sleep(100);
 
     // object enumeration and count ainimation
     for(var i = 0; i<objects+1; i++) {
         gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+i+'';
-        await sleep(100 * Math.random());
+        await sleep(50 * (Math.random() + Math.random()));
     }
 
     await sleep(500);
 
     gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+objects+', done.';
 
-    
+    await sleep(500);
+
+
+    // counting objects animation
+
 
     /*
     
