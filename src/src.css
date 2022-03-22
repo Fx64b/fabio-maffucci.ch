@@ -2,7 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    body {
+        @apply
+        text-white
+        font-mono
+        h-full
+        overflow-hidden;
+    }
+}
 
 @layer components {
-    
+    #loading {
+        @apply
+        w-full
+        h-screen
+        border-none
+        bg-[#222630]
+        text-white
+        p-[1%];
+    }
+
+    #user {
+        @apply
+        text-[#57DA57]
+        inline-block
+        pt-1;
+    }
+
+    .white {
+        @apply
+        text-white
+        font-bold;
+    }
 }
