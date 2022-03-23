@@ -162,7 +162,6 @@ async function loadingAnimation()  {
 
             // increase cKib
             cKib += (Math.random() * 50);
-            console.log(cKib);
 
             await sleep(100);
         }
