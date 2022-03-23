@@ -55,7 +55,7 @@ async function loadingAnimation()  {
 
     await sleep(500);
 
-    // add div for git output
+    // add div for git output (Yes, the following text that is displayed is actual git pull output)
     loading.innerHTML += '<div id="gitOutput"></div>';
 
     // set gitoutput div as variable
@@ -67,31 +67,137 @@ async function loadingAnimation()  {
     // set objects to random amount
     do {
         var objects = Math.ceil(Math.random() * 100);
-    } while (objects < 9 || objects > 90);
+    } while (objects < 9 || objects > 80);
     
-    await sleep(100);
+    await sleep(50);
 
     // object enumeration and count ainimation
     for(var i = 0; i<objects+1; i++) {
         gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+i+'';
-        await sleep(50 * (Math.random() + Math.random()));
+        await sleep(25 * (Math.random() + Math.random()));
     }
 
-    await sleep(500);
+    await sleep(300);
 
     gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+objects+', done.';
 
-    await sleep(500);
+    await sleep(300);
 
 
     // counting objects animation
+    for(var i = 0; i<objects+1; i++) {
+        var percent = Math.ceil(i * (100 / objects));
+        gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+objects+', done.<br>';
+        gitOutput.innerHTML += '<span class="yellow">remote</span>: Counting objects: '+percent+'% ('+i+'/'+objects+')<br>';
+        await sleep(50 * (Math.random() + Math.random()));
+    }
+
+    await sleep(400);
+
+    gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+objects+', done.<br>';
+    gitOutput.innerHTML += '<span class="yellow">remote</span>: Counting objects: 100% ('+objects+'/'+objects+'), done.<br>';
+
+    await sleep(200);
+
+    // compressing objects animation
+
+    // get random number of objects to compress
+    do {
+        var compress = Math.ceil(Math.random() * 10);
+    } while (compress < 2);
+
+    for(var i = 0; i<compress+1; i++) {
+        var percent = Math.ceil(i * (100 / compress));
+        gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+objects+', done.<br>';
+        gitOutput.innerHTML += '<span class="yellow">remote</span>: Counting objects: 100% ('+objects+'/'+objects+'), done.<br>';
+        gitOutput.innerHTML += '<span class="yellow">remote</span>: Compressing objects: '+percent+'% ('+i+'/'+compress+')';
+        await sleep(50 * (Math.random() + Math.random()));
+    }
+
+    await sleep(80);
+
+    gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+objects+', done.<br>';
+    gitOutput.innerHTML += '<span class="yellow">remote</span>: Counting objects: 100% ('+objects+'/'+objects+'), done.<br>';
+    gitOutput.innerHTML += '<span class="yellow">remote</span>: Compressing objects: 100% ('+compress+'/'+compress+'), done.<br>';
+    
+    await sleep(50);
+
+    gitOutput.innerHTML += '<span class="yellow">remote</span>: Total '+compress+' (delta '+Math.ceil(compress/2)+'), reused 0 (delta 0), pack-reused 0';
+
+
+    // is later used to simulate kilobytes increasing while unpacking
+    // kilobytes 
+    var kib = Math.random()*1000;
+
+    // round to 2 decimal points
+    kib = kib.toFixed(2);
+
+    // current kilobytes that will be displayed
+    var cKib = 0;
+
+    // unpacking animation
+    for(var i = 0; i<compress+1; i++) {
+        var percent = Math.ceil(i * (100 / compress));
+        gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+objects+', done.<br>';
+        gitOutput.innerHTML += '<span class="yellow">remote</span>: Counting objects: 100% ('+objects+'/'+objects+'), done.<br>';
+        gitOutput.innerHTML += '<span class="yellow">remote</span>: Compressing objects: 100% ('+compress+'/'+compress+'), done.<br>';
+        gitOutput.innerHTML += '<span class="yellow">remote</span>: Total '+compress+' (delta '+Math.ceil(compress/2)+'), reused 0 (delta 0), pack-reused 0';
+        gitOutput.innerHTML += '<div id="unpacking"></div>';
+
+        var unpacking = document.getElementById("unpacking");
+
+
+        // how many times kib and kibs should get updated per unpacked object
+        var updated = Math.floor(Math.random()*10);
+
+
+        for(var j = 0; j<updated; j++) {
+            // kilobytes per second
+            var kibs = Math.random()*100;
+
+            // round to 2 decimal points
+            kibs = kibs.toFixed(2);
+
+            unpacking.innerHTML = 'Unpacking objects: '+percent+'% ('+i+'/'+compress+'), '+cKib.toFixed(2)+' KiB | '+kibs+' KiB/s';
+
+            // increase cKib
+            cKib += (Math.random() * 50);
+            console.log(cKib);
+
+            await sleep(100);
+        }
+
+        await sleep(50 * (Math.random() + Math.random()));
+    }
+
+    gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+objects+', done.<br>';
+    gitOutput.innerHTML += '<span class="yellow">remote</span>: Counting objects: 100% ('+objects+'/'+objects+'), done.<br>';
+    gitOutput.innerHTML += '<span class="yellow">remote</span>: Compressing objects: 100% ('+compress+'/'+compress+'), done.<br>';
+    gitOutput.innerHTML += '<span class="yellow">remote</span>: Total '+compress+' (delta '+Math.ceil(compress/2)+'), reused 0 (delta 0), pack-reused 0<br>';
+    gitOutput.innerHTML += 'Unpacking objects: 100% ('+compress+'/'+compress+'), '+cKib.toFixed(2)+' KiB | '+kibs+' KiB/s, done.';
+
+    await sleep(300);
+
+    gitOutput.innerHTML += '<br><br>This site is currently work in progress!';
+
+    gitOutput.innerHTML += '<div id="wip"></div>'
+
+    var wip = document.getElementById("wip");
+
+    while(true) {
+        wip.innerHTML = "Waiting for Fabio to finish this site ( / )";
+        await sleep(500);
+        wip.innerHTML = "Waiting for Fabio to finish this site ( -- )";
+        await sleep(500);
+        wip.innerHTML = "Waiting for Fabio to finish this site ( \\ )";
+        await sleep(500);
+        wip.innerHTML = "Waiting for Fabio to finish this site ( | )";
+        await sleep(500);
+    }
 
 
     /*
-    
-remote: Counting objects: 100% (20/20), done.
-remote: Compressing objects: 100% (8/8), done.
-remote: Total 15 (delta 7), reused 15 (delta 7), pack-reused 0
+
 Unpacking objects: 100% (15/15), 5.58 KiB | 55.00 KiB/s, done.
 From https://github.com/Fx64b/fabio-maffucci.ch
    b77b4be..6c5213f  main       -> origin/main
