@@ -175,11 +175,13 @@ async function loadingAnimation()  {
     gitOutput.innerHTML += '<span class="yellow">remote</span>: Total '+compress+' (delta '+Math.ceil(compress/2)+'), reused 0 (delta 0), pack-reused 0<br>';
     gitOutput.innerHTML += 'Unpacking objects: 100% ('+compress+'/'+compress+'), '+cKib.toFixed(2)+' KiB | '+kibs+' KiB/s, done.';
 
-    await sleep(300);
+    await sleep(1500);
 
     gitOutput.innerHTML += '<br><br>This site is currently work in progress!';
 
-    gitOutput.innerHTML += '<div id="wip"></div>'
+    await sleep(200);
+
+    gitOutput.innerHTML += '<br><div id="wip"></div>'
 
     var wip = document.getElementById("wip");
 
