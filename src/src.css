@@ -47,4 +47,9 @@
         @apply
         text-yellow-300;
     }
+
+    .orange {
+        @apply
+        text-orange-500;
+    }
 }
