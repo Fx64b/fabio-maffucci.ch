@@ -512,6 +512,11 @@ body {
   color: rgb(253 224 71 / var(--tw-text-opacity));
 }
 
+.orange {
+  --tw-text-opacity: 1;
+  color: rgb(249 115 22 / var(--tw-text-opacity));
+}
+
 .bg-\[\#222630\] {
   --tw-bg-opacity: 1;
   background-color: rgb(34 38 48 / var(--tw-bg-opacity));
