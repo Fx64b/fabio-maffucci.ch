@@ -177,11 +177,11 @@ async function loadingAnimation()  {
 
     await sleep(1500);
 
-    gitOutput.innerHTML += '<br><br>This site is currently work in progress!';
+    gitOutput.innerHTML += '<br><br><span class="orange">warning: </span>This site is currently work in progress!';
 
     await sleep(200);
 
-    gitOutput.innerHTML += '<br><div id="wip"></div>'
+    gitOutput.innerHTML += '<br><br><div id="wip"></div>'
 
     var wip = document.getElementById("wip");
 
