@@ -135,6 +135,10 @@ async function loadingAnimation()  {
     // current kilobytes that will be displayed
     var cKib = 0;
 
+    // define min value for kibs
+    var min = Math.random()*100;
+    var kibs = min;
+
     // unpacking animation
     for(var i = 0; i<compress+1; i++) {
         var percent = Math.ceil(i * (100 / compress));
@@ -153,7 +157,9 @@ async function loadingAnimation()  {
 
         for(var j = 0; j<updated; j++) {
             // kilobytes per second
-            var kibs = Math.random()*100;
+            do {
+                kibs = min * (Math.random()*10);
+            } while(kibs > min && kibs < min+50);
 
             // round to 2 decimal points
             kibs = kibs.toFixed(2);
@@ -179,7 +185,7 @@ async function loadingAnimation()  {
 
     gitOutput.innerHTML += '<br><br><span class="orange">warning: </span>This site is currently work in progress!';
 
-    await sleep(200);
+    await sleep(2000);
 
     gitOutput.innerHTML += '<br><br><div id="wip"></div>'
 
