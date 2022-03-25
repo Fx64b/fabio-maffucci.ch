@@ -136,8 +136,8 @@ async function loadingAnimation()  {
     var cKib = 0;
 
     // define min value for kibs
-    var min = Math.random()*100;
-    var kibs = min;
+    var max = Math.random()*100;
+    var kibs = max;
 
     // unpacking animation
     for(var i = 0; i<compress+1; i++) {
@@ -157,9 +157,7 @@ async function loadingAnimation()  {
 
         for(var j = 0; j<updated; j++) {
             // kilobytes per second
-            do {
-                kibs = min * (Math.random()*10);
-            } while(kibs > min && kibs < min+50);
+            kibs = max * Math.random();
 
             // round to 2 decimal points
             kibs = kibs.toFixed(2);
