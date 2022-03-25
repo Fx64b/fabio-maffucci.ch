@@ -157,7 +157,7 @@ async function loadingAnimation()  {
 
         for(var j = 0; j<updated; j++) {
             // kilobytes per second
-            kibs = max * Math.random();
+            kibs = Math.floor(max * Math.random())*Math.random();   // it is difficult to create a realistic and stable animation for this
 
             // round to 2 decimal points
             kibs = kibs.toFixed(2);
