@@ -142,6 +142,7 @@ async function loadingAnimation()  {
     // unpacking animation
     for(var i = 0; i<compress+1; i++) {
         var percent = Math.ceil(i * (100 / compress));
+        // todo: store the following lines in a variable
         gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+objects+', done.<br>';
         gitOutput.innerHTML += '<span class="yellow">remote</span>: Counting objects: 100% ('+objects+'/'+objects+'), done.<br>';
         gitOutput.innerHTML += '<span class="yellow">remote</span>: Compressing objects: 100% ('+compress+'/'+compress+'), done.<br>';
