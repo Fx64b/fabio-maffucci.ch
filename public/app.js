@@ -195,7 +195,7 @@ async function loadingAnimation()  {
 
     gitOutput.innerHTML += '<br><br><span class="orange">warning: </span>This site is currently work in progress!';
 
-    await sleep(2000);
+    await sleep(1500);
 
     // wip = work in progress
     gitOutput.innerHTML += '<br><br><div id="wip"></div>'
