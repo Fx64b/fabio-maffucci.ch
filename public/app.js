@@ -187,8 +187,11 @@ async function loadingAnimation()  {
     await sleep(300);
 
     // &emsp; = 4 space characters
-    gitOutput.innerHTML += '&emsp;&emsp;&emsp;b79b4ce..6c5273f  main &emsp; -> origin/main';
+    gitOutput.innerHTML += '&emsp;&emsp;&emsp;b79b4ce..6c5273f  main &emsp; -> origin/main<br>';
 
+    await sleep(300);
+
+    gitOutput.innerHTML += 'Updating b79b4ce..6c5273f<br>';
 
     
     await sleep(1500);
@@ -217,8 +220,7 @@ async function loadingAnimation()  {
     /*
 
 
-   b77b4be..6c5213f  main       -> origin/main
-Updating b77b4be..6c5213f
+
 Fast-forward
  public/app.js       |   8 ++++--
  public/img/icon.ico | Bin 0 -> 252990 bytes
