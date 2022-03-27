@@ -158,7 +158,7 @@ async function loadingAnimation()  {
 
         for(var j = 0; j<updated; j++) {
             // kilobytes per second
-            kibs = Math.floor(max * Math.random())*Math.random();   // it is difficult to create a realistic and stable animation for this
+            kibs = Math.floor(max * Math.random())*0.5;   // it is difficult to create a realistic and stable animation for this
 
             // round to 2 decimal points
             kibs = kibs.toFixed(2);
@@ -166,7 +166,7 @@ async function loadingAnimation()  {
             unpacking.innerHTML = 'Unpacking objects: '+percent+'% ('+i+'/'+compress+'), '+cKib.toFixed(2)+' KiB | '+kibs+' KiB/s';
 
             // increase cKib
-            cKib += (Math.random() * 50);
+            cKib += (Math.random() * 5);
 
             await sleep(100);
         }
