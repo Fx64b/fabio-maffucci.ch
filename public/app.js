@@ -193,6 +193,10 @@ async function loadingAnimation()  {
 
     gitOutput.innerHTML += 'Updating b79b4ce..6c5273f<br>';
 
+    await sleep(600);
+
+    gitOutput.innerHTML += 'Fast-forward<br>';
+
     
     await sleep(1500);
 
@@ -221,7 +225,7 @@ async function loadingAnimation()  {
 
 
 
-Fast-forward
+
  public/app.js       |   8 ++++--
  public/img/icon.ico | Bin 0 -> 252990 bytes
  public/img/icon.svg |  70 ++++++++++++++++++++++++++++++++++++++++++++++++++++
