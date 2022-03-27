@@ -178,8 +178,19 @@ async function loadingAnimation()  {
     gitOutput.innerHTML += '<span class="yellow">remote</span>: Counting objects: 100% ('+objects+'/'+objects+'), done.<br>';
     gitOutput.innerHTML += '<span class="yellow">remote</span>: Compressing objects: 100% ('+compress+'/'+compress+'), done.<br>';
     gitOutput.innerHTML += '<span class="yellow">remote</span>: Total '+compress+' (delta '+Math.ceil(compress/2)+'), reused 0 (delta 0), pack-reused 0<br>';
-    gitOutput.innerHTML += 'Unpacking objects: 100% ('+compress+'/'+compress+'), '+cKib.toFixed(2)+' KiB | '+kibs+' KiB/s, done.';
+    gitOutput.innerHTML += 'Unpacking objects: 100% ('+compress+'/'+compress+'), '+cKib.toFixed(2)+' KiB | '+kibs+' KiB/s, done.<br>';
 
+    await sleep(400);
+
+    gitOutput.innerHTML += 'From https://github.com/Fx64b/fabio-maffucci.ch<br>';
+
+    await sleep(300);
+
+    // &emsp; = 4 space characters
+    gitOutput.innerHTML += '&emsp;&emsp;&emsp;b79b4ce..6c5273f  main &emsp; -> origin/main';
+
+
+    
     await sleep(1500);
 
     gitOutput.innerHTML += '<br><br><span class="orange">warning: </span>This site is currently work in progress!';
@@ -205,8 +216,7 @@ async function loadingAnimation()  {
 
     /*
 
-Unpacking objects: 100% (15/15), 5.58 KiB | 55.00 KiB/s, done.
-From https://github.com/Fx64b/fabio-maffucci.ch
+
    b77b4be..6c5213f  main       -> origin/main
 Updating b77b4be..6c5213f
 Fast-forward
