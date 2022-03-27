@@ -186,6 +186,7 @@ async function loadingAnimation()  {
 
     await sleep(2000);
 
+    // wip = work in progress
     gitOutput.innerHTML += '<br><br><div id="wip"></div>'
 
     var wip = document.getElementById("wip");
