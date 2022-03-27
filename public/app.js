@@ -166,7 +166,7 @@ async function loadingAnimation()  {
             unpacking.innerHTML = 'Unpacking objects: '+percent+'% ('+i+'/'+compress+'), '+cKib.toFixed(2)+' KiB | '+kibs+' KiB/s';
 
             // increase cKib
-            cKib += (Math.random() * 5);
+            cKib += kibs / 8;
 
             await sleep(100);
         }
