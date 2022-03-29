@@ -227,7 +227,7 @@ async function loadingAnimation()  {
 
         var changesString = changes + '| &emsp; <span class="green">';
 
-        for(var j = 0; j<Math.floor(additions/2); j++) {
+        for(var j = 0; j<Math.ceil(additions/2); j++) {
             changesString += "+";
         }
 
