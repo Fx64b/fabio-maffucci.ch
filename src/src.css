@@ -52,4 +52,22 @@
         @apply
         text-orange-500;
     }
+
+    .red {
+        @apply
+        font-bold
+        text-red-500;
+    }
+
+    .green {
+        @apply
+        font-bold
+        text-green-500;
+    }
+
+    .space {
+        @apply
+        inline-block
+        min-w-[300px];
+    }
 }
