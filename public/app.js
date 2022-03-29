@@ -273,20 +273,6 @@ async function loadingAnimation()  {
         await sleep(500);
     }
 
-
-    /*
-
-
-
-
-
- 
- create mode 100644 public/img/icon.ico
- create mode 100755 public/img/icon.svg
-    
-    
-    */
-
 }
 
 loadingAnimation();
