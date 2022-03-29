@@ -168,10 +168,10 @@ async function loadingAnimation()  {
             // increase cKib
             cKib += kibs / 8;
 
-            await sleep(100);
+            await sleep(50);
         }
 
-        await sleep(50 * (Math.random() + Math.random()));
+        await sleep(25 * (Math.random() + Math.random()));
     }
 
     gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+objects+', done.<br>';
@@ -197,7 +197,60 @@ async function loadingAnimation()  {
 
     gitOutput.innerHTML += 'Fast-forward<br>';
 
+    // generate random changes for random files
+    // random amount of files
+
+    // files array
+    var filesArray = ["public/app.js", "public/index.html", "public/style.css", "README.md", "tailwind.config.js", "package.json"];
     
+    // random number in range of 1 and size of array
+    var files = Math.floor(Math.random() * (filesArray.length - 2)) + 2;
+
+    // total insertions and deletions
+    var insertions = 0;
+    var deletions = 0;
+
+    // total deltions
+    for(var i = 0; i<files; i++) {
+        // random changes per file
+        var changes = Math.random() * 20;
+        if(changes < 5) {
+            changes = Math.ceil(changes);
+        } else {
+            changes = Math.floor(changes);
+        }
+
+        var additions = Math.floor(Math.random() * (changes -1 + 1)) + 1;
+        
+        insertions += additions;
+        deletions += changes-additions;
+
+        var changesString = changes + '| &emsp; <span class="green">';
+
+        for(var j = 0; j<Math.floor(additions/2); j++) {
+            changesString += "+";
+        }
+
+        changesString += '</span><span class="red">';
+
+        for(var j = 0; j<(Math.ceil(changes/2)-additions); j++) {
+            changesString += "-";
+        }
+
+        changesString += '</span>';
+
+        gitOutput.innerHTML += '<span class="space">' + filesArray[i] + '</span>' + changesString + "<br>";
+
+        await sleep(200);
+        
+    }
+
+    await sleep(300);
+
+    //5 files changed, 79 insertions(+), 3 deletions(-)
+    gitOutput.innerHTML += '<span class="yellow">' +files + '</span> files changed, <span class="yellow">' + insertions + '</span> insertions(<span class="green">+</span>), <span class="yellow">' + deletions + '</span> deletions(<span class="red">-</span>)<br>';
+
+
     await sleep(1500);
 
     gitOutput.innerHTML += '<br><br><span class="orange">warning: </span>This site is currently work in progress!';
@@ -226,12 +279,8 @@ async function loadingAnimation()  {
 
 
 
- public/app.js       |   8 ++++--
- public/img/icon.ico | Bin 0 -> 252990 bytes
- public/img/icon.svg |  70 ++++++++++++++++++++++++++++++++++++++++++++++++++++
- public/index.html   |   1 +
- public/style.css    |   3 ++-
- 5 files changed, 79 insertions(+), 3 deletions(-)
+
+ 
  create mode 100644 public/img/icon.ico
  create mode 100755 public/img/icon.svg
     
