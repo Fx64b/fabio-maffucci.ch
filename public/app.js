@@ -168,10 +168,10 @@ async function loadingAnimation()  {
             // increase cKib
             cKib += kibs / 8;
 
-            await sleep(50);
+            await sleep(100);
         }
 
-        await sleep(25 * (Math.random() + Math.random()));
+        await sleep(25 * (Math.random() + 1));
     }
 
     gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+objects+', done.<br>';
