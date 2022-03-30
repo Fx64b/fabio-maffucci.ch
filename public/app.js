@@ -247,7 +247,7 @@ async function loadingAnimation()  {
 
     await sleep(300);
 
-    //5 files changed, 79 insertions(+), 3 deletions(-)
+    
     gitOutput.innerHTML += '<span class="yellow">' +files + '</span> files changed, <span class="yellow">' + insertions + '</span> insertions(<span class="green">+</span>), <span class="yellow">' + deletions + '</span> deletions(<span class="red">-</span>)<br>';
 
 
