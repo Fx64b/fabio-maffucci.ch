@@ -534,6 +534,11 @@ body {
   min-width: 300px;
 }
 
+.space-2 {
+  display: inline-block;
+  min-width: 30px;
+}
+
 .bg-\[\#222630\] {
   --tw-bg-opacity: 1;
   background-color: rgb(34 38 48 / var(--tw-bg-opacity));
