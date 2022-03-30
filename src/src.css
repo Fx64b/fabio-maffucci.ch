@@ -70,4 +70,10 @@
         inline-block
         min-w-[300px];
     }
+
+    .space-2 {
+        @apply
+        inline-block
+        min-w-[30px];
+    }
 }
