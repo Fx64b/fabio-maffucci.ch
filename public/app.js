@@ -204,7 +204,7 @@ async function loadingAnimation()  {
     var filesArray = ["public/app.js", "public/index.html", "public/style.css", "README.md", "tailwind.config.js", "package.json"];
     
     // random number in range of 1 and size of array
-    var files = Math.floor(Math.random() * (filesArray.length - 2)) + 2;
+    var files = Math.floor(Math.random() * (filesArray.length - 1)) + 1;
 
     // total insertions and deletions
     var insertions = 0;
@@ -220,7 +220,7 @@ async function loadingAnimation()  {
             changes = Math.floor(changes);
         }
 
-        var additions = Math.floor(Math.random() * (changes -1 + 1)) + 1;
+        var additions = Math.floor(Math.random() * (changes -2)) + 1;
         
         insertions += additions;
         deletions += changes-additions;
