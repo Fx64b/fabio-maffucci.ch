@@ -225,7 +225,7 @@ async function loadingAnimation()  {
         insertions += additions;
         deletions += changes-additions;
 
-        var changesString = changes + '| &emsp; <span class="green">';
+        var changesString = '<span class="space-2">' + changes + '</span>' + '| &emsp; <span class="green">';
 
         for(var j = 0; j<Math.ceil(additions/2); j++) {
             changesString += "+";
