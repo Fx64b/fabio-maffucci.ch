@@ -227,13 +227,15 @@ async function loadingAnimation()  {
 
         var changesString = '<span class="space-2">' + changes + '</span>' + '| &emsp; <span class="green">';
 
-        for(var j = 0; j<Math.ceil(additions/2); j++) {
+        // Math.ceil(additions/2);
+        for(var j = 0; j<additions; j++) {
             changesString += "+";
         }
 
         changesString += '</span><span class="red">';
 
-        for(var j = 0; j<(Math.ceil(changes/2)-additions); j++) {
+        //(Math.ceil(changes/2)-additions)
+        for(var j = 0; j<changes-additions; j++) {
             changesString += "-";
         }
 
