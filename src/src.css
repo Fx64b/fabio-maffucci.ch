@@ -8,7 +8,9 @@
         text-white
         font-mono
         h-full
-        lg:overflow-hidden;
+        text-[0.5rem]
+        sm:text-sm
+        lg:text-lg;
     }
 }
 

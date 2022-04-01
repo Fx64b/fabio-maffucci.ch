@@ -426,13 +426,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 body {
   height: 100%;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.5rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+@media (min-width: 640px) {
+  body {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
 @media (min-width: 1024px) {
   body {
-    overflow: hidden;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 
