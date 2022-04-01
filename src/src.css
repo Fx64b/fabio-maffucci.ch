@@ -8,7 +8,7 @@
         text-white
         font-mono
         h-full
-        overflow-hidden;
+        lg:overflow-hidden;
     }
 }
 
