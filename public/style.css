@@ -545,7 +545,22 @@ body {
 
 .space {
   display: inline-block;
-  min-width: 300px;
+}
+
+@media (min-width: 640px) {
+  .space {
+    min-width: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .space {
+    min-width: 100px;
+  }
+
+  .space {
+    min-width: 300px;
+  }
 }
 
 .space-2 {
