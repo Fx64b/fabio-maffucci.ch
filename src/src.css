@@ -70,7 +70,9 @@
     .space {
         @apply
         inline-block
-        min-w-[300px];
+        lg:min-w-[100px]
+        sm:min-w-[200px]
+        lg:min-w-[300px];
     }
 
     .space-2 {
