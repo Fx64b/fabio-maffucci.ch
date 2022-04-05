@@ -243,7 +243,7 @@ async function loadingAnimation()  {
 
         gitOutput.innerHTML += '<span class="space">' + filesArray[i] + '</span>' + changesString + "<br>";
 
-        await sleep(200);
+        await sleep(100);
         
     }
 
@@ -257,7 +257,7 @@ async function loadingAnimation()  {
 
     gitOutput.innerHTML += '<br><br><span class="orange">warning: </span>This site is currently work in progress!';
 
-    await sleep(1500);
+    await sleep(1000);
 
     // wip = work in progress
     gitOutput.innerHTML += '<br><br><div id="wip"></div>'
