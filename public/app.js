@@ -289,7 +289,13 @@ async function loadingAnimation()  {
 
     loading.innerHTML += '<br><div id="liveServer"></div>';
 
+    var liveServer = document.getElementById("liveServer");
 
+    await sleep(1500);
+
+    liveServer.innerHTML = '<span class="darkGreen">Serving "public" at http://127.0.0.1:8080</span>';
+
+    await sleep(1500);
     /*
 
     await sleep(1500);
