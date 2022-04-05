@@ -144,7 +144,7 @@ async function loadingAnimation()  {
     var kibs = max;
 
     var percent = 0;
-    
+
     // unpacking animation
     for(var i = 0; i<compress+1; i++) {
         // todo: store the following lines in a variable
@@ -189,7 +189,8 @@ async function loadingAnimation()  {
 
     await sleep(400);
 
-    gitOutput.innerHTML += 'From https://github.com/Fx64b/fabio-maffucci.ch<br>';
+    // the link leads to a 404 page because the repository is currently private until the first release
+    gitOutput.innerHTML += 'From <a href="https://github.com/Fx64b/fabio-maffucci.ch" target="_blank">https://github.com/Fx64b/fabio-maffucci.ch</a><br>';
 
     await sleep(300);
 
