@@ -87,6 +87,10 @@ async function loadingAnimation()  {
     // counting objects animation
     for(var i = 0; i<objects+1; i++) {
         var percent = Math.ceil(i * (100 / objects));
+        // prevent percent to go over 100 (sometimes it goes to 101)
+        if(percent > 100) {
+            percent = 100;
+        }
         gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+objects+', done.<br>';
         gitOutput.innerHTML += '<span class="yellow">remote</span>: Counting objects: '+percent+'% ('+i+'/'+objects+')<br>';
         await sleep(50 * (Math.random() + Math.random()));
