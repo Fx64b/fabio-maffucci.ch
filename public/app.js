@@ -74,7 +74,7 @@ async function loadingAnimation()  {
     // object enumeration and count ainimation
     for(var i = 0; i<objects+1; i++) {
         gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+i+'';
-        await sleep(25 * (Math.random() + Math.random()));
+        await sleep(20 * (Math.random() + Math.random()));
     }
 
     await sleep(300);
@@ -93,7 +93,7 @@ async function loadingAnimation()  {
         }
         gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+objects+', done.<br>';
         gitOutput.innerHTML += '<span class="yellow">remote</span>: Counting objects: '+percent+'% ('+i+'/'+objects+')<br>';
-        await sleep(50 * (Math.random() + Math.random()));
+        await sleep(25 * (Math.random() + Math.random()));
     }
 
     await sleep(400);
@@ -158,7 +158,7 @@ async function loadingAnimation()  {
 
 
         // how many times kib and kibs should get updated per unpacked object
-        var updated = Math.floor(Math.random()*10);
+        var updated = Math.floor(Math.random()*8);
 
 
         for(var j = 0; j<updated; j++) {
@@ -178,7 +178,7 @@ async function loadingAnimation()  {
 
         percent = Math.ceil(i * (100 / compress));
 
-        await sleep(25 * (Math.random() + 1));
+        await sleep(20 * (Math.random() + 1));
     }
 
     gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+objects+', done.<br>';
