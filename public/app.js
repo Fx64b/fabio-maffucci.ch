@@ -64,10 +64,10 @@ async function loadingAnimation()  {
     // git pull output
     gitOutput.innerHTML += "<br>";
 
-    // set objects to random amount
+    // set objects to random amount in range
     do {
         var objects = Math.ceil(Math.random() * 100);
-    } while (objects < 9 || objects > 80);
+    } while (objects < 9 || objects > 80); // ???? improve later
     
     await sleep(50);
 
@@ -288,7 +288,7 @@ async function loadingAnimation()  {
     }
 
     loading.innerHTML += '<br><div id="liveServer"></div>';
-    
+
 
     /*
 
