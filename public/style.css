@@ -520,6 +520,13 @@ a {
   color: rgb(87 218 87 / var(--tw-text-opacity));
 }
 
+#npx {
+  display: inline-block;
+  padding-top: 0.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(87 218 87 / var(--tw-text-opacity));
+}
+
 .white {
   font-weight: 700;
   --tw-text-opacity: 1;

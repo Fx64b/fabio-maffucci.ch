@@ -44,6 +44,13 @@
         pt-1;
     }
 
+    #npx {
+        @apply
+        text-[#57DA57]
+        inline-block
+        pt-1;
+    }
+
     .white {
         @apply
         text-white
