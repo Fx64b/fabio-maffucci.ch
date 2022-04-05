@@ -79,6 +79,11 @@
         text-green-500;
     }
 
+    .darkGreen {
+        @apply
+        text-green-600;
+    }
+
     .space {
         @apply
         inline-block
