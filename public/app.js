@@ -260,6 +260,37 @@ async function loadingAnimation()  {
     
     gitOutput.innerHTML += '<span class="yellow">' +files + '</span> files changed, <span class="yellow">' + insertions + '</span> insertions(<span class="green">+</span>), <span class="yellow">' + deletions + '</span> deletions(<span class="red">-</span>)<br>';
 
+    await sleep(100);
+
+
+    // npx command
+    loading.innerHTML += '<br><div id="npx">[fabio@maffucci <span class="white">fabio-maffucci</span>]$</div>';
+
+    var npx = document.getElementById("npx");
+
+    // blinking effect
+    for(var i = 0; i<4; i++) {
+        npx.innerHTML = '[fabio@maffucci <span class="white">fabio-maffucci</span>]$ <span class="white">_</span>';
+        await sleep(600);
+        npx.innerHTML = '[fabio@maffucci <span class="white">fabio-maffucci</span>]$ ';
+        await sleep(600);
+    }
+
+    // typewriter effect
+    var str = " npx live-server public";
+
+    // for each character in string
+    for(var i = 0; i<str.length; i++) {
+        if(i<str.length) {
+            loading.innerHTML += str.charAt(i);
+            await sleep(100);
+        }
+    }
+
+    loading.innerHTML += '<br><div id="liveServer"></div>';
+    
+
+    /*
 
     await sleep(1500);
 
@@ -282,6 +313,7 @@ async function loadingAnimation()  {
         wip.innerHTML = "Waiting for Fabio to finish this site ( | )";
         await sleep(500);
     }
+    */
 
 }
 
