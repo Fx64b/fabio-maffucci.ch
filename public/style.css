@@ -445,6 +445,11 @@ body {
   }
 }
 
+a {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
 *, ::before, ::after {
   --tw-translate-x: 0;
   --tw-translate-y: 0;
