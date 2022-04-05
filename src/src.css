@@ -12,6 +12,11 @@
         sm:text-sm
         lg:text-lg;
     }
+
+    a {
+        @apply
+        underline;
+    }
 }
 
 @layer components {
