@@ -143,9 +143,10 @@ async function loadingAnimation()  {
     var max = Math.random()*100;
     var kibs = max;
 
+    var percent = 0;
+    
     // unpacking animation
     for(var i = 0; i<compress+1; i++) {
-        var percent = Math.ceil(i * (100 / compress));
         // todo: store the following lines in a variable
         gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+objects+', done.<br>';
         gitOutput.innerHTML += '<span class="yellow">remote</span>: Counting objects: 100% ('+objects+'/'+objects+'), done.<br>';
@@ -174,6 +175,8 @@ async function loadingAnimation()  {
 
             await sleep(100);
         }
+
+        percent = Math.ceil(i * (100 / compress));
 
         await sleep(25 * (Math.random() + 1));
     }
