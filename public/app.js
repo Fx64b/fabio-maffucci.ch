@@ -353,8 +353,8 @@ async function loadingAnimation()  {
 
     await sleep(1500);
 
-    /*
-    loading.innerHTML += '<br><br><span class="orange">warning: </span>This site is currently work in progress!';
+    
+    loading.innerHTML = '<br><br><span class="orange">warning: </span>This site is currently work in progress!';
 
     scroll();
 
@@ -377,7 +377,7 @@ async function loadingAnimation()  {
         wip.innerHTML = "Waiting for Fabio to finish this site ( | )";
         await sleep(500);
     }
-    */
+    
 
 }
 
