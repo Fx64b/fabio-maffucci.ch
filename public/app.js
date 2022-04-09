@@ -1,5 +1,13 @@
+// waits for ms milliseconds
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+// scrolls automatically to the bottom of the
+function scroll() {
+    // scroll to bottom of the page if window height is to small to display everything
+    window.scrollTo(0, document.body.scrollHeight);
 }
 
 async function loadingAnimation()  {
@@ -16,6 +24,8 @@ async function loadingAnimation()  {
         await sleep(600);
     }
 
+    scroll();
+
     // typewriter effect
     var string = "cd fabio-maffucci";
 
@@ -27,11 +37,15 @@ async function loadingAnimation()  {
         }
     }
 
+    scroll();
+
     await sleep(800);
 
     loading.innerHTML += '<br><div id="folder">[fabio@maffucci <span class="white">fabio-maffucci</span>]$</div>';
 
     var folder = document.getElementById("folder");
+
+    scroll();
 
     // blinking effect
     for(var i = 0; i<2; i++) {
@@ -40,6 +54,8 @@ async function loadingAnimation()  {
         folder.innerHTML = '[fabio@maffucci <span class="white">fabio-maffucci</span>]$ ';
         await sleep(600);
     }
+
+    scroll();
 
 
     // typewriter effect
@@ -53,6 +69,8 @@ async function loadingAnimation()  {
         }
     }
 
+    scroll();
+
     await sleep(500);
 
     // add div for git output (Yes, the following text that is displayed is actual git pull output)
@@ -63,6 +81,8 @@ async function loadingAnimation()  {
 
     // git pull output
     gitOutput.innerHTML += "<br>";
+
+    scroll();
 
     // set objects to random amount in range
     do {
@@ -77,9 +97,13 @@ async function loadingAnimation()  {
         await sleep(20 * (Math.random() + Math.random()));
     }
 
+    scroll();
+
     await sleep(300);
 
     gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+objects+', done.';
+
+    scroll();
 
     await sleep(300);
 
@@ -96,10 +120,14 @@ async function loadingAnimation()  {
         await sleep(25 * (Math.random() + Math.random()));
     }
 
+    scroll();
+
     await sleep(400);
 
     gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+objects+', done.<br>';
     gitOutput.innerHTML += '<span class="yellow">remote</span>: Counting objects: 100% ('+objects+'/'+objects+'), done.<br>';
+
+    scroll();
 
     await sleep(200);
 
@@ -123,6 +151,8 @@ async function loadingAnimation()  {
     gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+objects+', done.<br>';
     gitOutput.innerHTML += '<span class="yellow">remote</span>: Counting objects: 100% ('+objects+'/'+objects+'), done.<br>';
     gitOutput.innerHTML += '<span class="yellow">remote</span>: Compressing objects: 100% ('+compress+'/'+compress+'), done.<br>';
+
+    scroll();
     
     await sleep(50);
 
@@ -144,6 +174,8 @@ async function loadingAnimation()  {
     var kibs = max;
 
     var percent = 0;
+
+    scroll();
 
     // unpacking animation
     for(var i = 0; i<compress+1; i++) {
@@ -181,29 +213,41 @@ async function loadingAnimation()  {
         await sleep(20 * (Math.random() + 1));
     }
 
+    scroll();
+
     gitOutput.innerHTML = '<span class="yellow">remote</span>: Enumerating objects: '+objects+', done.<br>';
     gitOutput.innerHTML += '<span class="yellow">remote</span>: Counting objects: 100% ('+objects+'/'+objects+'), done.<br>';
     gitOutput.innerHTML += '<span class="yellow">remote</span>: Compressing objects: 100% ('+compress+'/'+compress+'), done.<br>';
     gitOutput.innerHTML += '<span class="yellow">remote</span>: Total '+compress+' (delta '+Math.ceil(compress/2)+'), reused 0 (delta 0), pack-reused 0<br>';
     gitOutput.innerHTML += 'Unpacking objects: 100% ('+compress+'/'+compress+'), '+cKib.toFixed(2)+' KiB | '+kibs+' KiB/s, done.<br>';
 
+    scroll();
+
     await sleep(400);
 
     // the link leads to a 404 page because the repository is currently private until the first release
     gitOutput.innerHTML += 'From <a href="https://github.com/Fx64b/fabio-maffucci.ch" target="_blank">https://github.com/Fx64b/fabio-maffucci.ch</a><br>';
+
+    scroll();
 
     await sleep(300);
 
     // &emsp; = 4 space characters
     gitOutput.innerHTML += '&emsp;&emsp;&emsp;b79b4ce..6c5273f  main &emsp; -> origin/main<br>';
 
+    scroll();
+
     await sleep(300);
 
     gitOutput.innerHTML += 'Updating b79b4ce..6c5273f<br>';
 
+    scroll();
+
     await sleep(600);
 
     gitOutput.innerHTML += 'Fast-forward<br>';
+
+    scroll();
 
     // generate random changes for random files
     // random amount of files
@@ -255,16 +299,22 @@ async function loadingAnimation()  {
         
     }
 
+    scroll();
+
     await sleep(300);
 
     
     gitOutput.innerHTML += '<span class="yellow">' +files + '</span> files changed, <span class="yellow">' + insertions + '</span> insertions(<span class="green">+</span>), <span class="yellow">' + deletions + '</span> deletions(<span class="red">-</span>)<br>';
+
+    scroll();
 
     await sleep(100);
 
 
     // npx command
     loading.innerHTML += '<br><div id="npx">[fabio@maffucci <span class="white">fabio-maffucci</span>]$</div>';
+
+    scroll();
 
     var npx = document.getElementById("npx");
 
@@ -275,6 +325,8 @@ async function loadingAnimation()  {
         npx.innerHTML = '[fabio@maffucci <span class="white">fabio-maffucci</span>]$ ';
         await sleep(600);
     }
+
+    scroll();
 
     // typewriter effect
     var str = " npx live-server public";
@@ -287,6 +339,8 @@ async function loadingAnimation()  {
         }
     }
 
+    scroll();
+
     loading.innerHTML += '<br><div id="liveServer"></div>';
 
     var liveServer = document.getElementById("liveServer");
@@ -295,19 +349,23 @@ async function loadingAnimation()  {
 
     liveServer.innerHTML = '<span class="darkGreen">Serving "public" at http://127.0.0.1:8080</span>';
 
+    scroll();
+
     await sleep(1500);
+
     /*
+    loading.innerHTML += '<br><br><span class="orange">warning: </span>This site is currently work in progress!';
 
-    await sleep(1500);
-
-    gitOutput.innerHTML += '<br><br><span class="orange">warning: </span>This site is currently work in progress!';
+    scroll();
 
     await sleep(1000);
 
     // wip = work in progress
-    gitOutput.innerHTML += '<br><br><div id="wip"></div>'
+    loading.innerHTML += '<br><br><div id="wip"></div>'
 
     var wip = document.getElementById("wip");
+
+    scroll();
 
     while(true) {
         wip.innerHTML = "Waiting for Fabio to finish this site ( / )";
